@@ -23,7 +23,7 @@ const TabsLayout = () => {
     screenOptions={{
         tabBarStyle: { 
             backgroundColor: '#1D2730',
-            borderTopColor: "#E2E2E2",
+            borderTopColor: "#1B242C",
             borderColor: "#1B242C",
             borderTopWidth: 3,      
             height: 80,             
@@ -40,7 +40,7 @@ const TabsLayout = () => {
                 headerShown: false,
                 tabBarIcon: ({color, focused}) => (
                     <TabIcon
-                        icon="search"
+                        icon="home"
                         color={color}
                         name="Home"
                         focused={focused}

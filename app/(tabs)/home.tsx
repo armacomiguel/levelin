@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView } from 'react-native';
+import { View, Text, SafeAreaView, StatusBar } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import Record from 'components/Record';
 import { loadPlayerData } from 'lib/action';
@@ -6,17 +6,17 @@ import useStore from 'lib/store';
 
 const Home = () => {
 
-  const {loadAndSetDataPlayer, streak} = useStore();
+  const {loadAndSetDataPlayer} = useStore();
 
   useEffect(() => {
     loadAndSetDataPlayer();
   }, []);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView className='h-full bg-blue-strong1'>
+      <StatusBar barStyle={'light-content'} animated={true} backgroundColor="#1D2730" translucent={true} />
       <View>
-        <Record streak={streak} />
-        <Text>Home</Text>
+        <Record />
       </View>
     </SafeAreaView>
   );

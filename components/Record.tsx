@@ -1,15 +1,31 @@
-import { View, Text, Alert } from 'react-native'
+import { View, Text, Alert, Image } from 'react-native'
 import React from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import useStore from 'lib/store';
+import { Ionicons } from '@expo/vector-icons';
+import images from 'constans/images';
 
-const Record = ({streak}:RecordProps) => {
-
-    // console.log("data: ",streak);
+const Record = () => {
+  const { lives, streak } = useStore();
 
   return (
-    <View className='bg-blue-600 p-4 w-full'>
-      <Text className='text-center text-white font-bold'>Record: {streak || 0}</Text>
-    </View>
+    <SafeAreaView className='w-full'>
+      <View className='bg-blue-dark1 p-4 flex-row justify-evenly  border-b-4 border-b-blue-dark2'>
+
+        <View className='flex-row items-center justify-evenly w-28'>
+          <Image className="w-8 h-8" source={images.heartImage} resizeMode='contain' width={15} height={15}/>
+          <Text className='text-white font-bold text-xl'>{streak || 0}</Text>
+        </View>
+
+        <View className='flex-row items-center justify-evenly w-28'>
+          <Image className="w-8 h-8" source={images.fireImage} resizeMode='cover' width={15} height={15}/>
+          <Text className='text-white font-bold text-xl'>{lives || 0}</Text>
+        </View>
+
+      </View>
+    </SafeAreaView>
   )
 }
+
 
 export default Record;

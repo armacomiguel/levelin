@@ -28,6 +28,8 @@ module.exports = {
         },
         blue: {
           strong1: "#242F3B",
+          dark1: "#1D2730",
+          dark2: "#1B242C",
         }
         
       },
