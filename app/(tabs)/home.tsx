@@ -2,23 +2,20 @@ import { View, Text, SafeAreaView } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import Record from 'components/Record';
 import { loadPlayerData } from 'lib/action';
+import useStore from 'lib/store';
 
 const Home = () => {
-  const [data, setData] = useState(null);
+
+  const {loadAndSetDataPlayer, streak} = useStore();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await loadPlayerData();
-      setData(result);
-    };
-
-    fetchData();
+    loadAndSetDataPlayer();
   }, []);
 
   return (
     <SafeAreaView>
       <View>
-        {data ? <Record data={data} /> : <Text>Cargando datos...</Text>}
+        <Record streak={streak} />
         <Text>Home</Text>
       </View>
     </SafeAreaView>

@@ -1,14 +1,3 @@
-export const mockData = {
-  level: 10,
-  exp: 1500,
-  lives: 3,
-  streak: 12,
-  tasks: [
-    { id: 1, name: 'Comer', completed: true },
-    { id: 2, name: 'Dormir', completed: false }
-  ]
-};
-
 export const defaultTasks = [
   {
     id: 1,
@@ -16,8 +5,8 @@ export const defaultTasks = [
     completed: false,
     category: 'exp',
     type: 'daily',
-    cooldownMinutes: 120,            // se reactiva cada 5 horas
-    lastCompleted: null,         // guarda el timestamp cuando se completó
+    cooldownMinutes: 1,            // se reactiva cada 5 horas
+    lastCompleted: 0,         // guarda el timestamp cuando se completó
   },
   {
     id: 2,
@@ -25,8 +14,8 @@ export const defaultTasks = [
     completed: false,
     category: 'exp',
     type: 'daily',
-    cooldownMinutes: 31,           // se reactiva cada día
-    lastCompleted: null,
+    cooldownMinutes: 1,           // se reactiva cada día
+    lastCompleted: 0,
   },
   {
     id: 3,
@@ -34,10 +23,19 @@ export const defaultTasks = [
     completed: false,
     category: 'exp',
     type: 'daily',
-    cooldownMinutes: 10,           // se reactiva cada día
-    lastCompleted: null,
+    cooldownMinutes: 1,           // se reactiva cada día
+    lastCompleted: 0,
   },
 ];
+
+export const defaultPlayerData = {
+  level: 1,
+  exp: 0,
+  expToUp: 20,
+  lives: 100,
+  streak: 0,
+  tasks: defaultTasks
+};
 
 
 export const mockTasks = [
